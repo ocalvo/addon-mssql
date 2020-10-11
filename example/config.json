@@ -12,7 +12,7 @@
   "hassio_role": "default",
   "ports": {
       "1433/tcp": null
-  }
+  },
   "options": {
     "log_level": "info",
     "seconds_between_quotes": 5
