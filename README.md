@@ -1,4 +1,4 @@
-# Home Assistant Community Add-on: Example
+# Home Assistant Community Add-on: MS-SQL Server
 
 [![GitHub Release][releases-shield]][releases]
 ![Project Stage][project-stage-shield]
@@ -69,7 +69,7 @@ Thank you for being involved! :heart_eyes:
 
 ## Authors & contributors
 
-The original setup of this repository is by [Franck Nijhof][frenck].
+The original setup of this repository is by [Oscar Calvo][ocalvo].
 
 For a full list of all authors and contributors,
 check [the contributor's page][contributors].
