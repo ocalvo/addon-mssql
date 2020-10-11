@@ -14,7 +14,7 @@ ARG BUILD_VERSION
 #ENTRYPOINT ["/usr/bin/set_options.sh"]
 ENV ACCEPT_EULA=1
 
-RUN apt-get install -y jq
+#RUN apt-get install -y jq
 
 # Labels
 LABEL \
