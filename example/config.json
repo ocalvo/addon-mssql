@@ -1,6 +1,6 @@
 {
   "name": "MSSQL",
-  "version": "0.108",
+  "version": "0.109",
   "slug": "msmsql",
   "description": "MS-SQL Server",
   "url": "https://github.com/ocalvo/addon-mssql",
