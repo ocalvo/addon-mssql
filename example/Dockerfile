@@ -11,7 +11,8 @@ ARG BUILD_DATE
 ARG BUILD_REF
 ARG BUILD_VERSION
 
-ENTRYPOINT ["/usr/bin/set_options.sh"]
+#ENTRYPOINT ["/usr/bin/set_options.sh"]
+ENV ACCEPT_EULA=1
 
 # Labels
 LABEL \
