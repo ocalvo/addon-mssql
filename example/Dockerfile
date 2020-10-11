@@ -1,14 +1,14 @@
 ARG BUILD_FROM=mcr.microsoft.com/azure-sql-edge:latest
 # hadolint ignore=DL3006
-FROM ${BUILD_FROM}
+FROM mcr.microsoft.com/azure-sql-edge:latest
 
 # Copy root filesystem
 COPY rootfs /
 
 # Setup base
-RUN apk add --no-cache \
-    coreutils=8.32-r0 \
-    wget=1.20.3-r1
+#RUN apk add --no-cache coreutils=8.32-r0 wget=1.20.3-r1
+
+RUN /bin/sh -c /opt/mssql/bin/launchpadd -usens=false -enableOutboundAccess=true -usesameuser=true -sqlGroup root -- -reparentOrphanedDescendants=true -useDefaultLaunchers=false & /app/asdepackage/AsdePackage & /opt/mssql/bin/sqlservr
 
 # Build arguments
 ARG BUILD_ARCH
@@ -23,7 +23,7 @@ LABEL \
     io.hass.arch="${BUILD_ARCH}" \
     io.hass.type="addon" \
     io.hass.version=${BUILD_VERSION} \
-    maintainer="Oscar Calvo <@ocalvo" \
+    maintainer="Oscar Calvo <@ocalvo>" \
     org.opencontainers.image.title="MSSQL" \
     org.opencontainers.image.description="MSSQL add-on for Home Assistant" \
     org.opencontainers.image.vendor="MSSQL Home Assistant Add-on" \
