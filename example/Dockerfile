@@ -18,20 +18,20 @@ ARG BUILD_VERSION
 
 # Labels
 LABEL \
-    io.hass.name="Example" \
-    io.hass.description="Example add-on by Home Assistant Community Add-ons" \
+    io.hass.name="MSSQL" \
+    io.hass.description="MSSQL Server add-on for Home Assistant" \
     io.hass.arch="${BUILD_ARCH}" \
     io.hass.type="addon" \
     io.hass.version=${BUILD_VERSION} \
-    maintainer="Franck Nijhof <frenck@addons.community>" \
-    org.opencontainers.image.title="Example" \
-    org.opencontainers.image.description="Example add-on by Home Assistant Community Add-ons" \
-    org.opencontainers.image.vendor="Home Assistant Community Add-ons" \
-    org.opencontainers.image.authors="Franck Nijhof <frenck@addons.community>" \
+    maintainer="Oscar Calvo <@ocalvo" \
+    org.opencontainers.image.title="MSSQL" \
+    org.opencontainers.image.description="MSSQL add-on for Home Assistant" \
+    org.opencontainers.image.vendor="MSSQL Home Assistant Add-on" \
+    org.opencontainers.image.authors="Oscar Calvo <@ocalvo>" \
     org.opencontainers.image.licenses="MIT" \
-    org.opencontainers.image.url="https://addons.community" \
-    org.opencontainers.image.source="https://github.com/hassio-addons/addon-example" \
-    org.opencontainers.image.documentation="https://github.com/hassio-addons/addon-example/blob/master/README.md" \
+    org.opencontainers.image.url="https://github.com/ocalvo/addon-mssql" \
+    org.opencontainers.image.source="https://github.com/ocalvo/addon-mssql" \
+    org.opencontainers.image.documentation="https://raw.githubusercontent.com/ocalvo/addon-mssql/main/README.md" \
     org.opencontainers.image.created=${BUILD_DATE} \
     org.opencontainers.image.revision=${BUILD_REF} \
     org.opencontainers.image.version=${BUILD_VERSION}
