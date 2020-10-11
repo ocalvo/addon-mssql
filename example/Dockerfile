@@ -16,7 +16,7 @@ ENV ACCEPT_EULA=1
 
 RUN \
     apt-get update \
-    && apt-get install -y --no-install-recommends jq
+    && apt-get install -y apt-transport-https jq
 
 # Labels
 LABEL \
