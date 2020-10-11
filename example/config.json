@@ -1,6 +1,6 @@
 {
   "name": "MSSQL",
-  "version": "0.07",
+  "version": "0.08",
   "slug": "msmsql",
   "description": "MS-SQL Server",
   "url": "https://github.com/ocalvo/addon-mssql",
@@ -14,8 +14,9 @@
       "1433/tcp": null
   },
   "options": {
-    "log_level": "info",
-    "seconds_between_quotes": 5
+    "ACCEPT_EULA": "0",
+    "MSSQL_SA_PASSWORD": null,
+    "MSSQL_PID": "Developer"
   },
   "schema": {
     "log_level": "list(trace|debug|info|notice|warning|error|fatal)",
