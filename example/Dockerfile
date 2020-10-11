@@ -16,6 +16,8 @@ ENV ACCEPT_EULA=1
 
 #RUN apt-get install -y jq
 
+CMD ['/bin/sh','-c','/opt/mssql/bin/launchpadd -usens=false -enableOutboundAccess=true -usesameuser=true -sqlGroup root -- -reparentOrphanedDescendants=true -useDefaultLaunchers=false & /app/asdepackage/AsdePackage & /opt/mssql/bin/sqlservr']
+
 # Labels
 LABEL \
     io.hass.name="MSSQL" \
