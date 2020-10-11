@@ -15,6 +15,7 @@ USER root
 # Copy root filesystem
 COPY rootfs /
 RUN apt-get install -y jq
+RUN chmod +x /etc/init.d/set_options.sh
 
 #CMD /opt/mssql/bin/launchpadd -usens=false -enableOutboundAccess=true -usesameuser=true -sqlGroup root -- -reparentOrphanedDescendants=true -useDefaultLaunchers=false & /app/asdepackage/AsdePackage & /opt/mssql/bin/sqlservr
 
