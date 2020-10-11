@@ -2,9 +2,6 @@ ARG BUILD_FROM=mcr.microsoft.com/azure-sql-edge:latest
 # hadolint ignore=DL3006
 FROM mcr.microsoft.com/azure-sql-edge:latest
 
-# Copy root filesystem
-COPY rootfs /
-
 # Build arguments
 ARG BUILD_ARCH
 ARG BUILD_DATE
@@ -15,6 +12,8 @@ ARG BUILD_VERSION
 ENV ACCEPT_EULA=1
 
 USER root
+# Copy root filesystem
+COPY rootfs /
 RUN apt-get install -y jq
 
 #CMD /opt/mssql/bin/launchpadd -usens=false -enableOutboundAccess=true -usesameuser=true -sqlGroup root -- -reparentOrphanedDescendants=true -useDefaultLaunchers=false & /app/asdepackage/AsdePackage & /opt/mssql/bin/sqlservr
