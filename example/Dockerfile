@@ -14,6 +14,8 @@ ARG BUILD_VERSION
 #ENTRYPOINT ["/usr/bin/set_options.sh"]
 ENV ACCEPT_EULA=1
 
+RUN apt-get install jq
+
 # Labels
 LABEL \
     io.hass.name="MSSQL" \
