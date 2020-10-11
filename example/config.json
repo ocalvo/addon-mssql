@@ -1,6 +1,6 @@
 {
   "name": "MSSQL",
-  "version": "0.09",
+  "version": "0.100",
   "slug": "msmsql",
   "description": "MS-SQL Server",
   "url": "https://github.com/ocalvo/addon-mssql",
@@ -14,12 +14,12 @@
       "1433/tcp": null
   },
   "options": {
-    "ACCEPT_EULA": "0",
-    "MSSQL_SA_PASSWORD": null,
+    "ACCEPT_EULA": 0,
+    "MSSQL_SA_PASSWORD": "password",
     "MSSQL_PID": "Developer"
   },
   "schema": {
-    "ACCEPT_EULA": "list(0,1)",
+    "ACCEPT_EULA": "int(0,1)",
     "MSSQL_SA_PASSWORD": "str",
     "MSSQL_PID": "list(Developer,Premium)"
   }
