@@ -1,6 +1,6 @@
 {
   "name": "MSSQL",
-  "version": "0.101",
+  "version": "0.102",
   "slug": "msmsql",
   "description": "MS-SQL Server",
   "url": "https://github.com/ocalvo/addon-mssql",
@@ -15,7 +15,7 @@
   },
   "options": {
     "ACCEPT_EULA": 0,
-    "MSSQL_SA_PASSWORD": null,
+    "MSSQL_SA_PASSWORD": null
   },
   "schema": {
     "ACCEPT_EULA": "int(0,1)",
