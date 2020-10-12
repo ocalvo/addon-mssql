@@ -14,7 +14,6 @@ USER root
 COPY rootfs /
 RUN apt-get install -y jq
 RUN chmod +x /usr/bin/start_sqlserver.sh
-RUN chown mssql /data
 
 ENV MSSQL_DATA_DIR=/data/db
 ENV MSSQL_BACKUP_DIR=/data/backup
