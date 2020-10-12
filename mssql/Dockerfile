@@ -19,9 +19,9 @@ ENV MSSQL_DATA_DIR=/data/db
 ENV MSSQL_BACKUP_DIR=/data/backup
 ENV MSSQL_LOG_DIR=/data/log
 ENV MSSQL_DUMP_DIR=/data/dump
-ENV MSSQL_MASTER_DATA_FILE=/data/master.mdf
-ENV MSSQL_MASTER_LOG_FILE=/data/mastlog.ldf
-ENV MSSQL_ERROR_LOG_FILE=/data/error.log
+ENV MSSQL_MASTER_DATA_FILE=/data/master/master.mdf
+ENV MSSQL_MASTER_LOG_FILE=/data/master/mastlog.ldf
+ENV MSSQL_ERROR_LOG_FILE=/data/log/error.log
 
 USER mssql
 CMD /opt/mssql/bin/launchpadd -usens=false -enableOutboundAccess=true -usesameuser=true -sqlGroup root -- -reparentOrphanedDescendants=true -useDefaultLaunchers=false & /app/asdepackage/AsdePackage & /usr/bin/start_sqlserver.sh
