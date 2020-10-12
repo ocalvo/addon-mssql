@@ -8,16 +8,15 @@ ARG BUILD_DATE
 ARG BUILD_REF
 ARG BUILD_VERSION
 
-#ENTRYPOINT ["/usr/bin/set_options.sh"]
-#ENV ACCEPT_EULA=1
 
 USER root
 # Copy root filesystem
 COPY rootfs /
 RUN apt-get install -y jq
-RUN chmod +x /etc/init.d/set_options.sh
+RUN chmod +x /usr/bin/start_sqlserver.sh
 
-CMD /opt/mssql/bin/launchpadd -usens=false -enableOutboundAccess=true -usesameuser=true -sqlGroup root -- -reparentOrphanedDescendants=true -useDefaultLaunchers=false & /app/asdepackage/AsdePackage & /etc/init.d/set_options.sh
+USER mssql
+CMD /opt/mssql/bin/launchpadd -usens=false -enableOutboundAccess=true -usesameuser=true -sqlGroup root -- -reparentOrphanedDescendants=true -useDefaultLaunchers=false & /app/asdepackage/AsdePackage & /usr/bin/start_sqlserver.sh
 
 # Labels
 LABEL \
