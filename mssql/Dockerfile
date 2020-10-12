@@ -15,6 +15,11 @@ COPY rootfs /
 RUN apt-get install -y jq
 RUN chmod +x /usr/bin/start_sqlserver.sh
 
+ENV MSSQL_DATA_DIR=/data
+ENV MSSQL_BACKUP_DIR=/data/backup
+ENV MSSQL_LOG_DIR=/data/log
+ENV MSSQL_DUMP_DIR=/data/dump
+
 USER mssql
 CMD /opt/mssql/bin/launchpadd -usens=false -enableOutboundAccess=true -usesameuser=true -sqlGroup root -- -reparentOrphanedDescendants=true -useDefaultLaunchers=false & /app/asdepackage/AsdePackage & /usr/bin/start_sqlserver.sh
 
