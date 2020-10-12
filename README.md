@@ -110,12 +110,12 @@ SOFTWARE.
 [armhf-shield]: https://img.shields.io/badge/armhf-yes-green.svg
 [armv7-shield]: https://img.shields.io/badge/armv7-yes-green.svg
 [commits-shield]: https://img.shields.io/github/commit-activity/y/hassio-addons/addon-example.svg
-[commits]: https://github.com/hassio-addons/addon-example/commits/master
-[contributors]: https://github.com/hassio-addons/addon-example/graphs/contributors
+[commits]: https://github.com/ocalvo/addon-mssql/commits/master
+[contributors]: https://github.com/ocalvo/addon-mssql/graphs/contributors
 [discord-ha]: https://discord.gg/c5DvZ4e
 [discord-shield]: https://img.shields.io/discord/478094546522079232.svg
 [discord]: https://discord.me/hassioaddons
-[docs]: https://github.com/hassio-addons/addon-example/blob/master/example/DOCS.md
+[docs]: https://github.com/ocalvo/addon-mssql/blob/master/example/DOCS.md
 [forum-shield]: https://img.shields.io/badge/community-forum-brightgreen.svg
 [forum]: https://community.home-assistant.io/t/repository-community-hass-io-add-ons/24705?u=frenck
 [frenck]: https://github.com/frenck
@@ -124,7 +124,7 @@ SOFTWARE.
 [gitlabci-shield]: https://gitlab.com/hassio-addons/addon-example/badges/master/pipeline.svg
 [gitlabci]: https://gitlab.com/hassio-addons/addon-example/pipelines
 [i386-shield]: https://img.shields.io/badge/i386-yes-green.svg
-[issue]: https://github.com/hassio-addons/addon-example/issues
+[issue]: https://github.com/ocalvo/addon-mssql/issues
 [license-shield]: https://img.shields.io/github/license/hassio-addons/addon-example.svg
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2020.svg
 [patreon-shield]: https://frenck.dev/wp-content/uploads/2019/12/patreon.png
@@ -132,5 +132,5 @@ SOFTWARE.
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-production%20ready-brightgreen.svg
 [reddit]: https://reddit.com/r/homeassistant
 [releases-shield]: https://img.shields.io/github/release/hassio-addons/addon-example.svg
-[releases]: https://github.com/hassio-addons/addon-example/releases
+[releases]: https://github.com/ocalvo/addon-mssql/releases
 [repository]: https://github.com/hassio-addons/repository
