@@ -9,3 +9,4 @@ export ACCEPT_EULA
 MSSQL_SA_PASSWORD=$(jq --raw-output '.MSSQL_SA_PASSWORD // empty' $CONFIG_PATH)
 export MSSQL_SA_PASSWORD
 
+/opt/mssql/bin/sqlservr
