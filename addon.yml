@@ -50,7 +50,7 @@ stages:
 # Generic DIND template
 .dind: &dind
   before_script:
-    - docker info
+    - echo dind
   services:
     - name: docker:stable-dind
       command: ["--experimental"]
@@ -67,7 +67,7 @@ stages:
   stage: build
   before_script:
   script:
-    - docker info
+    - echo Build
 
 # Generic deploy template
 .deploy: &deploy
@@ -75,7 +75,7 @@ stages:
   stage: deploy
   before_script:
   script:
-    - docker info
+    - echo Deploy
   tags:
     - deploy
 
@@ -85,7 +85,7 @@ stages:
   stage: manifest
   before_script:
   script:
-    - docker info
+    - echo Manifest
   tags:
     - manifest
   except:
@@ -98,7 +98,7 @@ stages:
     name: hassioaddons/repository-updater:latest
     entrypoint: [""]
   script:
-    - docker info
+    - echo Publish
   tags:
     - publish
   except:
