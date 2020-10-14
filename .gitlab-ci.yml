@@ -11,3 +11,10 @@ variables:
   ADDON_ARMHF_BASE: "mcr.microsoft.com/azure-sql-edge:latest"
   ADDON_ARMV7_BASE: "mcr.microsoft.com/azure-sql-edge:latest"
   ADDON_I386_BASE: "mcr.microsoft.com/azure-sql-edge:latest"
+
+stages:
+  - preflight
+  # - build
+  # - deploy
+  # - manifest
+  # - publish
