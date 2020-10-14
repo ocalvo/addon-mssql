@@ -42,10 +42,10 @@ variables:
 
 stages:
   - preflight
-  - build
-  - deploy
-  - manifest
-  - publish
+#  - build
+#  - deploy
+#  - manifest
+#  - publish
 
 # Generic DIND template
 .dind: &dind
