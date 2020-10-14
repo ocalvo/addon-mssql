@@ -14,7 +14,3 @@ variables:
 
 stages:
   - preflight
-  # - build
-  # - deploy
-  # - manifest
-  # - publish
