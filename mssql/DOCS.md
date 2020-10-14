@@ -96,7 +96,7 @@ SOFTWARE.
 [discord-ha]: https://discord.gg/c5DvZ4e
 [discord]: https://discord.me/hassioaddons
 [forum]: https://community.home-assistant.io/t/repository-community-hass-io-add-ons/24705?u=ocalvo
-[frenck]: https://github.com/ocalvo
+[ocalvo]: https://github.com/ocalvo
 [issue]: https://github.com/ocalvo/addon-mssql/issues
 [keepchangelog]: http://keepachangelog.com/en/1.0.0/
 [reddit]: https://reddit.com/r/homeassistant
