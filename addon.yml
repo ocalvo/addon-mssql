@@ -67,6 +67,7 @@ stages:
   stage: build
   before_script:
   script:
+    - docker info
 
 # Generic deploy template
 .deploy: &deploy
@@ -74,6 +75,7 @@ stages:
   stage: deploy
   before_script:
   script:
+    - docker info
   tags:
     - deploy
 
@@ -83,6 +85,7 @@ stages:
   stage: manifest
   before_script:
   script:
+    - docker info
   tags:
     - manifest
   except:
@@ -95,6 +98,7 @@ stages:
     name: hassioaddons/repository-updater:latest
     entrypoint: [""]
   script:
+    - docker info
   tags:
     - publish
   except:
