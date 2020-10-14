@@ -42,10 +42,10 @@ variables:
 
 stages:
   - preflight
-#  - build
-#  - deploy
-#  - manifest
-#  - publish
+  - build
+  - deploy
+  - manifest
+  - publish
 
 # Generic DIND template
 .dind: &dind
@@ -66,93 +66,14 @@ stages:
   <<: *dind
   stage: build
   before_script:
-    - docker info
-    - |
-      if [ "$(apk --print-arch)" = "amd64" ]; then
-        docker run --rm --privileged hassioaddons/qemu-user-static:latest
-      fi
-    - |
-      echo "${CI_JOB_TOKEN}" | docker login \
-        --username gitlab-ci-token \
-        --password-stdin \
-        registry.gitlab.com
-    - docker pull "registry.gitlab.com/${CI_PROJECT_PATH}/${ADDON_ARCH}:cache" || true
-    - |
-      if [ "${ADDON_QEMU}" = "true" ] && [ "${ADDON_ARCH}" = "aarch64" ]; then
-        apk --no-cache add curl
-        curl -L -s \
-          "https://github.com/hassio-addons/qemu-user-static/releases/download/v5.0.0/qemu-aarch64-static.tar.gz" | \
-          tar zxvf - -C "./${ADDON_TARGET}/rootfs/usr/bin/"
-      fi
-    - |
-      if [ "${ADDON_QEMU}" = "true" ] && [ "${ADDON_ARCH}" = "armhf" ]; then
-        apk --no-cache add curl
-        curl -L -s \
-          "https://github.com/hassio-addons/qemu-user-static/releases/download/v5.0.0/qemu-arm-static.tar.gz" | \
-          tar zxvf - -C "./${ADDON_TARGET}/rootfs/usr/bin/"
-      fi
-    - |
-      if [ "${ADDON_QEMU}" = "true" ] && [ "${ADDON_ARCH}" = "armv7" ]; then
-        apk --no-cache add curl
-        curl -L -s \
-          "https://github.com/hassio-addons/qemu-user-static/releases/download/v5.0.0/qemu-arm-static.tar.gz" | \
-          tar zxvf - -C "./${ADDON_TARGET}/rootfs/usr/bin/"
-      fi
   script:
-    - VERSION="${CI_COMMIT_TAG#v}"
-    - VERSION="${VERSION:-${CI_COMMIT_SHA:0:7}}"
-    - |
-      docker build \
-        --build-arg "BUILD_FROM=${FROM}" \
-        --build-arg "BUILD_DATE=$(date +"%Y-%m-%dT%H:%M:%SZ")" \
-        --build-arg "BUILD_ARCH=${ADDON_ARCH}" \
-        --build-arg "BUILD_REF=${CI_COMMIT_SHA}" \
-        --build-arg "BUILD_VERSION=${VERSION}" \
-        --cache-from "registry.gitlab.com/${CI_PROJECT_PATH}/${ADDON_ARCH}:cache" \
-        --tag \
-          "registry.gitlab.com/${CI_PROJECT_PATH}/${ADDON_ARCH}:${CI_COMMIT_SHA}" \
-        "${ADDON_TARGET}"
-    - |
-      docker push \
-        "registry.gitlab.com/${CI_PROJECT_PATH}/${ADDON_ARCH}:${CI_COMMIT_SHA}"
 
 # Generic deploy template
 .deploy: &deploy
   <<: *dind
   stage: deploy
   before_script:
-    - docker info
-    - docker pull "registry.gitlab.com/${CI_PROJECT_PATH}/${ADDON_ARCH}:${CI_COMMIT_SHA}"
-    - |
-      echo "${CI_JOB_TOKEN}" | docker login \
-        --username gitlab-ci-token \
-        --password-stdin \
-        registry.gitlab.com
-    - |
-      echo "${DOCKER_PASSWORD}" | docker login \
-        --username "${DOCKER_LOGIN}" \
-        --password-stdin
   script:
-    - |
-      docker tag \
-        "registry.gitlab.com/${CI_PROJECT_PATH}/${ADDON_ARCH}:${CI_COMMIT_SHA}" \
-        "registry.gitlab.com/${CI_PROJECT_PATH}/${ADDON_ARCH}:cache"
-    - docker push "registry.gitlab.com/${CI_PROJECT_PATH}/${ADDON_ARCH}:cache"
-    - TAG="${CI_COMMIT_TAG#v}"
-    - TAG="${TAG:-${CI_COMMIT_SHA:0:7}}"
-    - |
-      docker tag \
-        "registry.gitlab.com/${CI_PROJECT_PATH}/${ADDON_ARCH}:${CI_COMMIT_SHA}" \
-        "${DOCKER_HUB_ORG}/${ADDON_SLUG}:${ADDON_ARCH}-${TAG}"
-    - |
-      docker push \
-        "${DOCKER_HUB_ORG}/${ADDON_SLUG}:${ADDON_ARCH}-${TAG}"
-    - |
-      docker tag \
-        "registry.gitlab.com/${CI_PROJECT_PATH}/${ADDON_ARCH}:${CI_COMMIT_SHA}" \
-        "${DOCKER_HUB_ORG}/${ADDON_SLUG}-${ADDON_ARCH}:${TAG}"
-      docker push \
-        "${DOCKER_HUB_ORG}/${ADDON_SLUG}-${ADDON_ARCH}:${TAG}"
   tags:
     - deploy
 
@@ -161,89 +82,7 @@ stages:
   <<: *dind
   stage: manifest
   before_script:
-    - mkdir -p ~/.docker
-    - echo '{"experimental":"enabled"}' > ~/.docker/config.json
-    - docker info
-    - |
-      echo "${DOCKER_PASSWORD}" | docker login \
-        --username "${DOCKER_LOGIN}" \
-        --password-stdin
   script:
-    - TAG="${TAG#v}"
-    - TAG="${TAG:-${CI_COMMIT_SHA:0:7}}"
-    - REF="${CI_COMMIT_TAG#v}"
-    - REF="${REF:-${CI_COMMIT_SHA:0:7}}"
-    - |
-      if [ "${ADDON_AARCH64}" = "true" ]; then
-        docker manifest create \
-          --amend \
-          "${DOCKER_HUB_ORG}/${ADDON_SLUG}:${TAG}" \
-          "${DOCKER_HUB_ORG}/${ADDON_SLUG}:aarch64-${REF}"
-
-        docker manifest annotate \
-          "${DOCKER_HUB_ORG}/${ADDON_SLUG}:${TAG}" \
-          "${DOCKER_HUB_ORG}/${ADDON_SLUG}:aarch64-${REF}" \
-          --os=linux \
-          --arch=arm64 \
-          --variant="${ADDON_AARCH64_VARIANT}"
-      fi
-    - |
-      if [ "${ADDON_AMD64}" = "true" ]; then
-        docker manifest create \
-          --amend \
-          "${DOCKER_HUB_ORG}/${ADDON_SLUG}:${TAG}" \
-          "${DOCKER_HUB_ORG}/${ADDON_SLUG}:amd64-${REF}"
-
-        docker manifest annotate \
-          "${DOCKER_HUB_ORG}/${ADDON_SLUG}:${TAG}" \
-          "${DOCKER_HUB_ORG}/${ADDON_SLUG}:amd64-${REF}" \
-          --os=linux \
-          --arch=amd64
-      fi
-    - |
-      if [ "${ADDON_ARMHF}" = "true" ]; then
-        docker manifest create \
-          --amend \
-          "${DOCKER_HUB_ORG}/${ADDON_SLUG}:${TAG}" \
-          "${DOCKER_HUB_ORG}/${ADDON_SLUG}:armhf-${REF}"
-
-        docker manifest annotate \
-          "${DOCKER_HUB_ORG}/${ADDON_SLUG}:${TAG}" \
-          "${DOCKER_HUB_ORG}/${ADDON_SLUG}:armhf-${REF}" \
-          --os=linux \
-          --arch=arm \
-          --variant="${ADDON_ARMHF_VARIANT}"
-      fi
-    - |
-      if [ "${ADDON_ARMV7}" = "true" ]; then
-        docker manifest create \
-          --amend \
-          "${DOCKER_HUB_ORG}/${ADDON_SLUG}:${TAG}" \
-          "${DOCKER_HUB_ORG}/${ADDON_SLUG}:armv7-${REF}"
-
-        docker manifest annotate \
-          "${DOCKER_HUB_ORG}/${ADDON_SLUG}:${TAG}" \
-          "${DOCKER_HUB_ORG}/${ADDON_SLUG}:armv7-${REF}" \
-          --os=linux \
-          --arch=arm \
-          --variant="${ADDON_ARMV7_VARIANT}"
-      fi
-    - |
-      if [ "${ADDON_I386}" = "true" ]; then
-        docker manifest create \
-          --amend \
-          "${DOCKER_HUB_ORG}/${ADDON_SLUG}:${TAG}" \
-          "${DOCKER_HUB_ORG}/${ADDON_SLUG}:i386-${REF}"
-
-        docker manifest annotate \
-          "${DOCKER_HUB_ORG}/${ADDON_SLUG}:${TAG}" \
-          "${DOCKER_HUB_ORG}/${ADDON_SLUG}:i386-${REF}" \
-          --os=linux \
-          --arch=386
-      fi
-    - |
-      docker manifest push \
-        "${DOCKER_HUB_ORG}/${ADDON_SLUG}:${TAG}"
   tags:
     - manifest
   except:
@@ -256,11 +95,6 @@ stages:
     name: hassioaddons/repository-updater:latest
     entrypoint: [""]
   script:
-    - |
-      repository-updater \
-        --token "${GITHUB_TOKEN}" \
-        --repository "${REPOSITORY}" \
-        --addon "${ADDON_GITHUB_REPO}"
   tags:
     - publish
   except:
