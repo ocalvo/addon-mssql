@@ -1,6 +1,5 @@
 # Home Assistant Community Add-on: MSSQL Server
 
-
 ## Installation
 
 The installation of this add-on is pretty straightforward and not different in
@@ -21,16 +20,18 @@ Example add-on configuration:
 
 ```yaml
 ACCEPT_EULA: 1
+MSSQL_SA_PASSWORD: "Strong password"
 ```
 
 ### Option: `ACCEPT_EULA`
 
+Confirms your acceptance of the End-User Licensing Terms. For the Azure SQL Edge Developer EULA can be located [here](https://go.microsoft.com/fwlink/?linkid=2139274).
+Azure SQL Edge Premium EULA can be found [here](https://hub.docker.com/_/microsoft-azure-sql-edge?tab=description).
 
-### Option: `seconds_between_quotes`
+### Option: `MSSQL_SA_PASSWORD`
 
-Sets the number of seconds between the output of each quote. The value
-must be between `1` and `120` seconds. This value is set to `5` seconds by
-default.
+Specify your own strong password that is at least 8 characters and meets the [Azure SQL Edge password requirements](https://docs.microsoft.com/en-us/sql/relational-databases/security/password-policy).
+Required setting for the Azure SQL Edge image.
 
 ## Changelog & Releases
 
