@@ -17,9 +17,9 @@
 [![Discord][discord-shield]][discord]
 [![Community Forum][forum-shield]][forum]
 
-[![Sponsor Frenck via GitHub Sponsors][github-sponsors-shield]][github-sponsors]
+[![Sponsor ocalvo via GitHub Sponsors][github-sponsors-shield]][github-sponsors]
 
-[![Support Frenck on Patreon][patreon-shield]][patreon]
+[![Support ocalvo on Patreon][patreon-shield]][patreon]
 
 MSSQL Server add-on by Oscar Calvo.
 
