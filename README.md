@@ -17,9 +17,9 @@
 [![Discord][discord-shield]][discord]
 [![Community Forum][forum-shield]][forum]
 
-[![Sponsor Frenck via GitHub Sponsors][github-sponsors-shield]][github-sponsors]
+[![Sponsor ocalvo via GitHub Sponsors][github-sponsors-shield]][github-sponsors]
 
-[![Support Frenck on Patreon][patreon-shield]][patreon]
+[![Support ocalvo on Patreon][patreon-shield]][patreon]
 
 MSSQL Server add-on by Oscar Calvo.
 
@@ -54,7 +54,7 @@ Thank you for being involved! :heart_eyes:
 
 ## Authors & contributors
 
-The original setup of this repository is by [Oscar Calvo][@ocalvo].
+The original setup of this repository is by [Oscar Calvo](https://github.com/ocalvo).
 
 For a full list of all authors and contributors,
 check [the contributor's page][contributors].
