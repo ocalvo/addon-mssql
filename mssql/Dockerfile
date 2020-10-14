@@ -2,6 +2,7 @@
 # Using latest is prone to errors if the image will ever update. Pin the version explicitly to a release tag
 # hadolint ignore=DL3007
 ARG BUILD_FROM=mcr.microsoft.com/azure-sql-edge:latest
+# hadolint ignore=DL3007
 FROM mcr.microsoft.com/azure-sql-edge:latest
 # Build arguments
 ARG BUILD_ARCH
