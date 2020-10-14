@@ -15,6 +15,7 @@ COPY rootfs /
 # hadolint ignore=DL3008
 RUN apt-get install -y --no-install-recommends jq
 RUN chmod +x /usr/bin/start_sqlserver.sh
+RUN chown mssql /data
 ENV MSSQL_DATA_DIR=/data/db
 ENV MSSQL_BACKUP_DIR=/data/backup
 ENV MSSQL_LOG_DIR=/data/log
