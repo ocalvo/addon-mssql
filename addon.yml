@@ -193,7 +193,7 @@ stages:
           --amend \
           "${DOCKER_HUB_ORG}/${ADDON_SLUG}:${TAG}" \
           "${DOCKER_HUB_ORG}/${ADDON_SLUG}:amd64-${REF}"
-          
+
         docker manifest annotate \
           "${DOCKER_HUB_ORG}/${ADDON_SLUG}:${TAG}" \
           "${DOCKER_HUB_ORG}/${ADDON_SLUG}:amd64-${REF}" \
@@ -543,3 +543,4 @@ publish:edge:
       - $ADDON_PUBLISH == "true"
   environment:
     name: edge
+
