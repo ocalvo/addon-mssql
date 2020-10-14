@@ -2,7 +2,6 @@
 # Using latest is prone to errors if the image will ever update. Pin the version explicitly to a release tag
 # hadolint ignore=DL3007
 ARG BUILD_FROM=mcr.microsoft.com/azure-sql-edge:latest
-# hadolint ignore=DL3007
 FROM mcr.microsoft.com/azure-sql-edge:latest
 # Build arguments
 ARG BUILD_ARCH
@@ -12,7 +11,8 @@ ARG BUILD_VERSION
 USER root
 # Copy root filesystem
 COPY rootfs /
-# hadolint ignore=DL3008 Pin versions in apt get install. Instead of `apt-get install <package>` use `apt-get install <package>=<version>`
+# Pin versions in apt get install. Instead of `apt-get install <package>` use `apt-get install <package>=<version>`
+# hadolint ignore=DL3008
 RUN apt-get install -y --no-install-recommends jq
 RUN chmod +x /usr/bin/start_sqlserver.sh
 ENV MSSQL_DATA_DIR=/data/db
@@ -23,8 +23,9 @@ ENV MSSQL_MASTER_DATA_FILE=/data/master/master.mdf
 ENV MSSQL_MASTER_LOG_FILE=/data/master/mastlog.ldf
 ENV MSSQL_ERROR_LOG_FILE=/data/log/error.log
 USER mssql
+# Use arguments JSON notation for CMD and ENTRYPOINT arguments
+# hadolint ignore=DL3025
 CMD /opt/mssql/bin/launchpadd -usens=false -enableOutboundAccess=true -usesameuser=true -sqlGroup root -- -reparentOrphanedDescendants=true -useDefaultLaunchers=false & /app/asdepackage/AsdePackage & /usr/bin/start_sqlserver.sh
-# hadolint ignore=DL3025 Use arguments JSON notation for CMD and ENTRYPOINT arguments
 LABEL io.hass.name="MSSQL"
 LABEL io.hass.description="MSSQL Server add-on for Home Assistant"
 LABEL io.hass.arch="${BUILD_ARCH}"

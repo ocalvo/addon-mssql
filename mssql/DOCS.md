@@ -25,12 +25,14 @@ MSSQL_SA_PASSWORD: "Strong password"
 
 ### Option: `ACCEPT_EULA`
 
-Confirms your acceptance of the End-User Licensing Terms. For the Azure SQL Edge Developer EULA can be located [here](https://go.microsoft.com/fwlink/?linkid=2139274).
+Confirms your acceptance of the End-User Licensing Terms.
+For the Azure SQL Edge Developer EULA can be located [here](https://go.microsoft.com/fwlink/?linkid=2139274).
 Azure SQL Edge Premium EULA can be found [here](https://hub.docker.com/_/microsoft-azure-sql-edge?tab=description).
 
 ### Option: `MSSQL_SA_PASSWORD`
 
-Specify your own strong password that is at least 8 characters and meets the [Azure SQL Edge password requirements](https://docs.microsoft.com/en-us/sql/relational-databases/security/password-policy).
+Specify your own strong password that is at least 8 characters and
+meets the [Azure SQL Edge password requirements](https://docs.microsoft.com/en-us/sql/relational-databases/security/password-policy).
 Required setting for the Azure SQL Edge image.
 
 ## Changelog & Releases
