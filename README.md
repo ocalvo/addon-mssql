@@ -94,7 +94,7 @@ SOFTWARE.
 [amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg
 [armhf-shield]: https://img.shields.io/badge/armhf-yes-green.svg
 [armv7-shield]: https://img.shields.io/badge/armv7-yes-green.svg
-[commits-shield]: https://img.shields.io/github/commit-activity/y/hassio-addons/addon-example.svg
+[commits-shield]: https://img.shields.io/github/commit-activity/y/hassio-addons/addon-msmsql.svg
 [commits]: https://github.com/ocalvo/addon-mssql/commits/master
 [contributors]: https://github.com/ocalvo/addon-mssql/graphs/contributors
 [discord-ha]: https://discord.gg/c5DvZ4e
@@ -102,11 +102,11 @@ SOFTWARE.
 [discord]: https://discord.me/hassioaddons
 [docs]: https://github.com/ocalvo/addon-mssql/blob/main/mssql/DOCS.md
 [forum-shield]: https://img.shields.io/badge/community-forum-brightgreen.svg
-[forum]: https://community.home-assistant.io/t/repository-community-hass-io-add-ons/24705?u=frenck
+[forum]: https://community.home-assistant.io/t/repository-community-hass-io-add-ons/24705?u=ocalvo
 [ocalvo]: https://github.com/ocalvo
 [github-sponsors-shield]: https://frenck.dev/wp-content/uploads/2019/12/github_sponsor.png
 [github-sponsors]: https://github.com/sponsors/ocalvo
-[gitlabci-shield]: https://gitlab.com/hassio-addons/addon-example/badges/master/pipeline.svg
+[gitlabci-shield]: https://gitlab.com/calvoo/addon-msmsql/badges/main/pipeline.svg
 [gitlabci]: https://gitlab.com/calvoo/addon-msmsql/pipelines
 [i386-shield]: https://img.shields.io/badge/i386-yes-green.svg
 [issue]: https://github.com/ocalvo/addon-mssql/issues
