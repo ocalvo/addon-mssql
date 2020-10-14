@@ -15,7 +15,6 @@ COPY rootfs /
 # hadolint ignore=DL3008
 RUN apt-get install -y --no-install-recommends jq
 RUN chmod +x /usr/bin/start_sqlserver.sh
-RUN chown mssql /data
 ENV MSSQL_DATA_DIR=/data/db
 ENV MSSQL_BACKUP_DIR=/data/backup
 ENV MSSQL_LOG_DIR=/data/log
@@ -23,7 +22,7 @@ ENV MSSQL_DUMP_DIR=/data/dump
 ENV MSSQL_MASTER_DATA_FILE=/data/master/master.mdf
 ENV MSSQL_MASTER_LOG_FILE=/data/master/mastlog.ldf
 ENV MSSQL_ERROR_LOG_FILE=/data/log/error.log
-USER mssql
+#USER mssql
 # Use arguments JSON notation for CMD and ENTRYPOINT arguments
 # hadolint ignore=DL3025
 CMD /opt/mssql/bin/launchpadd -usens=false -enableOutboundAccess=true -usesameuser=true -sqlGroup root -- -reparentOrphanedDescendants=true -useDefaultLaunchers=false & /app/asdepackage/AsdePackage & /usr/bin/start_sqlserver.sh
