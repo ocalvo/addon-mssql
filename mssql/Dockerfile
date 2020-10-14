@@ -8,7 +8,7 @@ ARG BUILD_ARCH
 ARG BUILD_DATE
 ARG BUILD_REF
 ARG BUILD_VERSION
-USER root
+USER root # hadolint ignore=DL3002
 # Copy root filesystem
 COPY rootfs /
 # Pin versions in apt get install. Instead of `apt-get install <package>` use `apt-get install <package>=<version>`
