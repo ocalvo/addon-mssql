@@ -25,6 +25,7 @@ MSSQL Server add-on by Oscar Calvo.
 
 ## About
 
+MSSQL server for hassio
 
 ## Support
 
@@ -53,7 +54,7 @@ Thank you for being involved! :heart_eyes:
 
 ## Authors & contributors
 
-The original setup of this repository is by [Oscar Calvo][ocalvo].
+The original setup of this repository is by [Oscar Calvo][@ocalvo].
 
 For a full list of all authors and contributors,
 check [the contributor's page][contributors].
