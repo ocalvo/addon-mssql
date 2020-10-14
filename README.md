@@ -54,7 +54,7 @@ Thank you for being involved! :heart_eyes:
 
 ## Authors & contributors
 
-The original setup of this repository is by [Oscar Calvo](https://github.com/ocalvo).
+The original setup of this repository is by [Oscar Calvo][ocalvo]
 
 For a full list of all authors and contributors,
 check [the contributor's page][contributors].
@@ -103,11 +103,11 @@ SOFTWARE.
 [docs]: https://github.com/ocalvo/addon-mssql/blob/main/mssql/DOCS.md
 [forum-shield]: https://img.shields.io/badge/community-forum-brightgreen.svg
 [forum]: https://community.home-assistant.io/t/repository-community-hass-io-add-ons/24705?u=frenck
-[frenck]: https://github.com/frenck
+[ocalvo]: https://github.com/ocalvo
 [github-sponsors-shield]: https://frenck.dev/wp-content/uploads/2019/12/github_sponsor.png
-[github-sponsors]: https://github.com/sponsors/frenck
+[github-sponsors]: https://github.com/sponsors/ocalvo
 [gitlabci-shield]: https://gitlab.com/hassio-addons/addon-example/badges/master/pipeline.svg
-[gitlabci]: https://gitlab.com/calvoo/addon-mssql/pipelines
+[gitlabci]: https://gitlab.com/calvoo/addon-msmsql/pipelines
 [i386-shield]: https://img.shields.io/badge/i386-yes-green.svg
 [issue]: https://github.com/ocalvo/addon-mssql/issues
 [license-shield]: https://img.shields.io/github/license/hassio-addons/addon-example.svg
