@@ -11,9 +11,6 @@ comparison to installing any other Home Assistant add-on.
 
 ## Configuration
 
-Eventought this add-on is just an example add-on, it does come with some
-configuration options to play around with.
-
 **Note**: _Remember to restart the add-on when the configuration is changed._
 
 Example add-on configuration:
