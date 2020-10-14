@@ -1,6 +1,7 @@
-ARG BUILD_FROM=mcr.microsoft.com/azure-sql-edge:latest
 # hadolint ignore=DL3006
-# hadolint ignore=DL3007 Using latest is prone to errors if the image will ever update. Pin the version explicitly to a release tag
+# Using latest is prone to errors if the image will ever update. Pin the version explicitly to a release tag
+# hadolint ignore=DL3007
+ARG BUILD_FROM=mcr.microsoft.com/azure-sql-edge:latest
 FROM mcr.microsoft.com/azure-sql-edge:latest
 # Build arguments
 ARG BUILD_ARCH
@@ -10,8 +11,8 @@ ARG BUILD_VERSION
 USER root
 # Copy root filesystem
 COPY rootfs /
-RUN apt-get install -y --no-install-recommends jq
 # hadolint ignore=DL3008 Pin versions in apt get install. Instead of `apt-get install <package>` use `apt-get install <package>=<version>`
+RUN apt-get install -y --no-install-recommends jq
 RUN chmod +x /usr/bin/start_sqlserver.sh
 ENV MSSQL_DATA_DIR=/data/db
 ENV MSSQL_BACKUP_DIR=/data/backup
