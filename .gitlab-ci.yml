@@ -1,5 +1,5 @@
 ---
-include: https://raw.githubusercontent.com/hassio-addons/organization/master/gitlabci/addon.yml
+include: https://raw.githubusercontent.com/ocalvo/addon-mssql/main/addon.yml
 
 variables:
   ADDON_GITHUB_REPO: "ocalvo/addon-mssql"
