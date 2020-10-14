@@ -1,28 +1,14 @@
-# Home Assistant Community Add-on: Example
+# Home Assistant Community Add-on: MSSQL Server
 
-This is an example add-on for Home Assistant. When started, it displays a
-random quote every 5 seconds.
-
-It shows off several features and structures like:
-
-- Full blown GitHub repository.
-- General Dockerfile structure and setup.
-- The use of the `config.json` and `build.json` files.
-- General shell scripting structure (`run.sh`).
-- Quality assurance using CodeClimate.
-- Continuous integration and deployment using GitLab.
-- Usage of the Community Home Assistant Add-ons build environment.
-- Small use of the Bash function library in our base images.
-- The use of Docker label schema.
 
 ## Installation
 
 The installation of this add-on is pretty straightforward and not different in
 comparison to installing any other Home Assistant add-on.
 
-1. Search for the "Example" add-on in the Supervisor add-on store and install it.
-1. Start the "Example" add-on.
-1. Check the logs of the "Example" add-on to see it in action.
+1. Search for the "MSSQL" add-on in the Supervisor add-on store and install it.
+1. Start the "MSSQL" add-on.
+1. Check the logs of the "MSSQL" add-on to see it in action.
 
 ## Configuration
 
@@ -34,27 +20,11 @@ configuration options to play around with.
 Example add-on configuration:
 
 ```yaml
-log_level: info
-seconds_between_quotes: 5
+ACCEPT_EULA: 1
 ```
 
-### Option: `log_level`
+### Option: `ACCEPT_EULA`
 
-The `log_level` option controls the level of log output by the add-on and can
-be changed to be more or less verbose, which might be useful when you are
-dealing with an unknown issue. Possible values are:
-
-- `trace`: Show every detail, like all called internal functions.
-- `debug`: Shows detailed debug information.
-- `info`: Normal (usually) interesting events.
-- `warning`: Exceptional occurrences that are not errors.
-- `error`:  Runtime errors that do not require immediate action.
-- `fatal`: Something went terribly wrong. Add-on becomes unusable.
-
-Please note that each level automatically includes log messages from a
-more severe level, e.g., `debug` also shows `info` messages. By default,
-the `log_level` is set to `info`, which is the recommended setting unless
-you are troubleshooting.
 
 ### Option: `seconds_between_quotes`
 
@@ -93,7 +63,7 @@ You could also [open an issue here][issue] GitHub.
 
 ## Authors & contributors
 
-The original setup of this repository is by [Franck Nijhof][frenck].
+The original setup of this repository is by [Oscar Calvo][ocalvo].
 
 For a full list of all authors and contributors,
 check [the contributor's page][contributors].
@@ -125,8 +95,8 @@ SOFTWARE.
 [contributors]: https://github.com/ocalvo/addon-mssql/graphs/contributors
 [discord-ha]: https://discord.gg/c5DvZ4e
 [discord]: https://discord.me/hassioaddons
-[forum]: https://community.home-assistant.io/t/repository-community-hass-io-add-ons/24705?u=frenck
-[frenck]: https://github.com/frenck
+[forum]: https://community.home-assistant.io/t/repository-community-hass-io-add-ons/24705?u=ocalvo
+[frenck]: https://github.com/ocalvo
 [issue]: https://github.com/ocalvo/addon-mssql/issues
 [keepchangelog]: http://keepachangelog.com/en/1.0.0/
 [reddit]: https://reddit.com/r/homeassistant

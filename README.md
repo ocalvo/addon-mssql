@@ -21,26 +21,10 @@
 
 [![Support Frenck on Patreon][patreon-shield]][patreon]
 
-Example add-on by Community Home Assistant add-ons.
+MSSQL Server add-on by Oscar Calvo.
 
 ## About
 
-This is an example add-on for Home Assistant. When started, it displays a
-random quote every 5 seconds.
-
-It shows off several features and structures like:
-
-- Full blown GitHub repository.
-- General Dockerfile structure and setup.
-- The use of the `config.json` and `build.json` files.
-- General shell scripting structure (`run.sh`).
-- Quality assurance using CodeClimate.
-- Continuous integration and deployment using GitLab.
-- Usage of the Community Home Assistant Add-ons build environment.
-- Small use of the Bash function library in our base images.
-- The use of Docker label schema.
-
-[:books: Read the full add-on documentation][docs]
 
 ## Support
 
@@ -115,20 +99,20 @@ SOFTWARE.
 [discord-ha]: https://discord.gg/c5DvZ4e
 [discord-shield]: https://img.shields.io/discord/478094546522079232.svg
 [discord]: https://discord.me/hassioaddons
-[docs]: https://github.com/ocalvo/addon-mssql/blob/master/example/DOCS.md
+[docs]: https://github.com/ocalvo/addon-mssql/blob/main/mssql/DOCS.md
 [forum-shield]: https://img.shields.io/badge/community-forum-brightgreen.svg
 [forum]: https://community.home-assistant.io/t/repository-community-hass-io-add-ons/24705?u=frenck
 [frenck]: https://github.com/frenck
 [github-sponsors-shield]: https://frenck.dev/wp-content/uploads/2019/12/github_sponsor.png
 [github-sponsors]: https://github.com/sponsors/frenck
 [gitlabci-shield]: https://gitlab.com/hassio-addons/addon-example/badges/master/pipeline.svg
-[gitlabci]: https://gitlab.com/hassio-addons/addon-example/pipelines
+[gitlabci]: https://gitlab.com/calvoo/addon-mssql/pipelines
 [i386-shield]: https://img.shields.io/badge/i386-yes-green.svg
 [issue]: https://github.com/ocalvo/addon-mssql/issues
 [license-shield]: https://img.shields.io/github/license/hassio-addons/addon-example.svg
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2020.svg
-[patreon-shield]: https://frenck.dev/wp-content/uploads/2019/12/patreon.png
-[patreon]: https://www.patreon.com/frenck
+[patreon-shield]: https://ocalvo.dev/wp-content/uploads/2019/12/patreon.png
+[patreon]: https://www.patreon.com/ocalvo
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-production%20ready-brightgreen.svg
 [reddit]: https://reddit.com/r/homeassistant
 [releases-shield]: https://img.shields.io/github/release/hassio-addons/addon-example.svg
