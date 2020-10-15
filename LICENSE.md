@@ -1,5 +1,3 @@
-
-
 # MIT License
 
 Copyright (c) Oscar Calvo
