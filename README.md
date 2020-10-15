@@ -94,7 +94,7 @@ SOFTWARE.
 [amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg
 [armhf-shield]: https://img.shields.io/badge/armhf-yes-green.svg
 [armv7-shield]: https://img.shields.io/badge/armv7-yes-green.svg
-[commits-shield]: https://img.shields.io/github/commit-activity/y/hassio-addons/addon-msmsql.svg
+[commits-shield]: https://img.shields.io/github/commit-activity/y/ocalvo/addon-mssql.svg
 [commits]: https://github.com/ocalvo/addon-mssql/commits/master
 [contributors]: https://github.com/ocalvo/addon-mssql/graphs/contributors
 [discord-ha]: https://discord.gg/c5DvZ4e
@@ -106,8 +106,8 @@ SOFTWARE.
 [ocalvo]: https://github.com/ocalvo
 [github-sponsors-shield]: https://ocalvo.dev/wp-content/uploads/2019/12/github_sponsor.png
 [github-sponsors]: https://github.com/sponsors/ocalvo
-[gitlabci-shield]: https://gitlab.com/calvoo/addon-msmsql/badges/main/pipeline.svg
-[gitlabci]: https://gitlab.com/calvoo/addon-msmsql/pipelines
+[gitlabci-shield]: https://gitlab.com/calvoo/addon-mssql/badges/main/pipeline.svg
+[gitlabci]: https://gitlab.com/calvoo/addon-mssql/pipelines
 [i386-shield]: https://img.shields.io/badge/i386-yes-green.svg
 [issue]: https://github.com/ocalvo/addon-mssql/issues
 [license-shield]: https://img.shields.io/github/license/ocalvo/addon-mssql.svg
