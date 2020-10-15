@@ -1,6 +1,6 @@
 * text=auto
 
-Dockerfile text eol=lf
+Dockerfile text eol=crlf
 *.ps1 text eol=lf
 *.psm1 text eol=lf
 *.vim text eol=lf
