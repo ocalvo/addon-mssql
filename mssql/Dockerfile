@@ -8,7 +8,7 @@ ARG BUILD_ARCH
 ARG BUILD_DATE
 ARG BUILD_REF
 ARG BUILD_VERSION
-# hadolint ignore=DL3001
+# hadolint ignore=DL3002
 USER root
 # Copy root filesystem
 COPY rootfs /
