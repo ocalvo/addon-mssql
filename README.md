@@ -1,3 +1,5 @@
+
+
 # Home Assistant Community Add-on: MS-SQL Server
 
 [![GitHub Release][releases-shield]][releases]
