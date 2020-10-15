@@ -4,7 +4,7 @@ include: https://raw.githubusercontent.com/ocalvo/addon-mssql/main/addon.yml
 variables:
   ADDON_GITHUB_REPO: "ocalvo/addon-mssql"
   ADDON_SLUG: "mssql"
-   ADDON_TARGET: "mssql"
+  ADDON_TARGET: "mssql"
 
   ADDON_AARCH64_BASE: "mcr.microsoft.com/azure-sql-edge:latest"
   ADDON_AMD64_BASE: "mcr.microsoft.com/azure-sql-edge:latest"
