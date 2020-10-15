@@ -21,7 +21,7 @@
 
 [![Support ocalvo on Patreon][patreon-shield]][patreon]
 
-MSSQL Server add-on by Oscar Calvo.
+![logo](/mssql/logo.png) MSSQL Server add-on by Oscar Calvo.
 
 ## About
 
