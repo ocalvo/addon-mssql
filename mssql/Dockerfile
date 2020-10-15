@@ -2,13 +2,13 @@
 ARG BUILD_FROM=mcr.microsoft.com/azure-sql-edge:latest
 # Using latest is prone to errors if the image will ever update. Pin the version explicitly to a release tag
 # hadolint ignore=DL3007
-FROM mcr.microsoft.com/azure-sql-edge:latest # hadolint ignore=DL3007
+FROM mcr.microsoft.com/azure-sql-edge:latest
 # Build arguments
 ARG BUILD_ARCH
 ARG BUILD_DATE
 ARG BUILD_REF
 ARG BUILD_VERSION
-USER root # hadolint ignore=DL3002
+USER root
 # Copy root filesystem to root
 COPY rootfs /
 # Pin versions in apt get install. Instead of `apt-get install <package>` use `apt-get install <package>=<version>`
