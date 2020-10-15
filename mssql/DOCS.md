@@ -1,3 +1,5 @@
+
+
 # Home Assistant Community Add-on: MSSQL Server
 
 ## Installation
