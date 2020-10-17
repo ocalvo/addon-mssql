@@ -5,4 +5,4 @@
 *.j2 text eol=lf
 *.md text eol=lf
 *.json text eol=lf
-*.png eol=auto
+*.png eol=none
