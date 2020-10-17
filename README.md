@@ -104,7 +104,7 @@ SOFTWARE.
 [forum-shield]: https://img.shields.io/badge/community-forum-brightgreen.svg
 [forum]: https://community.home-assistant.io/t/repository-community-hass-io-add-ons/24705?u=ocalvo
 [ocalvo]: https://github.com/ocalvo
-[github-sponsors-shield]: https://ocalvo.dev/wp-content/uploads/2019/12/github_sponsor.png
+[github-sponsors-shield]: https://calvosoftware.com/github_sponsor.png
 [github-sponsors]: https://github.com/sponsors/ocalvo
 [gitlabci-shield]: https://gitlab.com/calvoo/addon-mssql/badges/main/pipeline.svg
 [gitlabci]: https://gitlab.com/calvoo/addon-mssql/pipelines
@@ -112,7 +112,7 @@ SOFTWARE.
 [issue]: https://github.com/ocalvo/addon-mssql/issues
 [license-shield]: https://img.shields.io/github/license/ocalvo/addon-mssql.svg
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2020.svg
-[patreon-shield]: https://ocalvo.dev/wp-content/uploads/2019/12/patreon.png
+[patreon-shield]: https://calvosoftware.com/patreon.png
 [patreon]: https://www.patreon.com/ocalvo
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-production%20ready-brightgreen.svg
 [reddit]: https://reddit.com/r/homeassistant
