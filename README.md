@@ -95,7 +95,7 @@ SOFTWARE.
 [armhf-shield]: https://img.shields.io/badge/armhf-yes-green.svg
 [armv7-shield]: https://img.shields.io/badge/armv7-yes-green.svg
 [commits-shield]: https://img.shields.io/github/commit-activity/y/ocalvo/addon-mssql.svg
-[commits]: https://github.com/ocalvo/addon-mssql/commits/master
+[commits]: https://github.com/ocalvo/addon-mssql/commits/main
 [contributors]: https://github.com/ocalvo/addon-mssql/graphs/contributors
 [discord-ha]: https://discord.gg/c5DvZ4e
 [discord-shield]: https://img.shields.io/discord/478094546522079232.svg

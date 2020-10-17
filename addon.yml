@@ -89,7 +89,7 @@ stages:
   tags:
     - manifest
   except:
-    - /^(?!master).+@/
+    - /^(?!main).+@/
 
 # Generic publish template
 .publish: &publish
@@ -102,7 +102,7 @@ stages:
   tags:
     - publish
   except:
-    - /^(?!master).+@/
+    - /^(?!main).+@/
 
 # Preflight jobs
 hadolint:
@@ -252,12 +252,12 @@ deploy:armhf:
     ADDON_ARCH: armhf
   only:
     refs:
-      - master
+      - main
       - /^v\d+\.\d+\.\d+(?:-(?:beta|rc)(?:(?:(?:\+|\.)?[a-zA-Z0-9]+)*)?)?$/
     variables:
       - $ADDON_ARMHF == "true"
   except:
-    - /^(?!master).+@/
+    - /^(?!main).+@/
 
 deploy:armv7:
   <<: *deploy
@@ -265,12 +265,12 @@ deploy:armv7:
     ADDON_ARCH: armv7
   only:
     refs:
-      - master
+      - main
       - /^v\d+\.\d+\.\d+(?:-(?:beta|rc)(?:(?:(?:\+|\.)?[a-zA-Z0-9]+)*)?)?$/
     variables:
       - $ADDON_ARMV7 == "true"
   except:
-    - /^(?!master).+@/
+    - /^(?!main).+@/
 
 deploy:aarch64:
   <<: *deploy
@@ -278,12 +278,12 @@ deploy:aarch64:
     ADDON_ARCH: aarch64
   only:
     refs:
-      - master
+      - main
       - /^v\d+\.\d+\.\d+(?:-(?:beta|rc)(?:(?:(?:\+|\.)?[a-zA-Z0-9]+)*)?)?$/
     variables:
       - $ADDON_AARCH64 == "true"
   except:
-    - /^(?!master).+@/
+    - /^(?!main).+@/
 
 deploy:i386:
   <<: *deploy
@@ -291,12 +291,12 @@ deploy:i386:
     ADDON_ARCH: i386
   only:
     refs:
-      - master
+      - main
       - /^v\d+\.\d+\.\d+(?:-(?:beta|rc)(?:(?:(?:\+|\.)?[a-zA-Z0-9]+)*)?)?$/
     variables:
       - $ADDON_I386 == "true"
   except:
-    - /^(?!master).+@/
+    - /^(?!main).+@/
 
 deploy:amd64:
   <<: *deploy
@@ -304,18 +304,18 @@ deploy:amd64:
     ADDON_ARCH: amd64
   only:
     refs:
-      - master
+      - main
       - /^v\d+\.\d+\.\d+(?:-(?:beta|rc)(?:(?:(?:\+|\.)?[a-zA-Z0-9]+)*)?)?$/
     variables:
       - $ADDON_AMD64 == "true"
   except:
-    - /^(?!master).+@/
+    - /^(?!main).+@/
 
 # Manifest jobs
 manifest:sha:
   <<: *manifest
   only:
-    - master
+    - main
 
 manifest:version:
   <<: *manifest
@@ -343,7 +343,7 @@ manifest:edge:
   variables:
     TAG: edge
   only:
-    - master
+    - main
 
 # Publish jobs
 publish:stable:
@@ -376,7 +376,7 @@ publish:edge:
     REPOSITORY: "${ADDONS_REPO_EDGE}"
   only:
     refs:
-      - master
+      - main
     variables:
       - $ADDON_PUBLISH == "true"
   environment:
