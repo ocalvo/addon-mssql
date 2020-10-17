@@ -1,8 +1,7 @@
-* text eol=lf
 .* text eol=lf
 *.md text eol=lf
 *.json text eol=lf
 *.j2 text eol=lf
 *.md text eol=lf
 *.json text eol=lf
-*.png eol=crlf
+Dockerfile text eol=lf
