@@ -1,7 +1,9 @@
 .* text eol=lf
+.github/CODEOWNERS eof=lf
 *.md text eol=lf
 *.json text eol=lf
 *.j2 text eol=lf
 *.md text eol=lf
 *.json text eol=lf
 Dockerfile text eol=lf
+*.png eol=auto
